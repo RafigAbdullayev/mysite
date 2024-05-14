@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim Formu</title>
+    <style>
+        /* Stil kodları buraya */
+        /* Form alanları için genel stillendirme */
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+       
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        
+        input[type="submit"]:hover {
+            background-color: green;
+        }
+
+        /*Form alanları düzenlenmesi*/
+        .container {
+            border-radius: 5px;
+            background-color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>İletişim Formu</h2>
+
+<div class="container">
+    <form action="/submit-your-form-handler" method="post">
+        Adınız
+        <input type="text" placeholder="Adınızı giriniz">
+
+        Soyadınız
+        <input type="text" placeholder="Soyadınızı giriniz">
+
+        E-posta Adresiniz
+        <input type="text" placeholder="E-posta adresinizi giriniz">
+
+        Konu
+        <textarea placeholder="Mesajınızı buraya yazınız" style="height:200px"></textarea>
+
+        <input type="submit" value="Gönder">
+    </form>
+</div>
+
+</body>
+</html>
+
