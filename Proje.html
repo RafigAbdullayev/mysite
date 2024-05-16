@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Proje</title>
 </head>
+
 <body>
-    
+  <center>
+    <h2>Web Sayfam</h2>
+  </center>
+        <style>
+
+          h2{
+            font-size: 36px;
+          }
+
+          nav {
+              text-align: center;
+              background-color: black;
+          }
+  
+          nav a {
+              display: inline-block;
+              color: white;
+              text-align: center;
+              padding: 14px 20px;
+          }
+  
+          nav a:hover {
+              background-color: wheat;
+              color: black;
+              cursor: pointer;
+          }
+
+          a{
+            font-size: 24px;
+          }
+
+      </style>
+
+        </head>
+
+        <body>
+
+        <nav> 
+          <a id="acilanSayfa">Hakkında</a>
+          <a id="acilanSayfa2">Özgeçmiş Sayfası</a>
+          <a id="acilanSayfa3">Sevdiğim Şehir</a>
+          <a id="acilanSayfa7">Şehrin Mirası</a>
+          <a id="acilanSayfa4">İlgi Alanlarım</a>
+          <a id="acilanSayfa5">Login Sayfası</a>
+          <a id="acilanSayfa6">İletişim Sayfası</a>
+      </nav>
+        
+        <script>
+        document.getElementById("acilanSayfa").addEventListener("click", function() {
+          window.open("hakkinda.html", "_blank"); 
+        });
+
+        document.getElementById("acilanSayfa2").addEventListener("click", function() {
+          window.open("ozgecmis.html", "_blank"); 
+        });
+
+        document.getElementById("acilanSayfa3").addEventListener("click", function() {
+          window.open("sehrim.html", "_blank"); 
+        });
+
+        document.getElementById("acilanSayfa4").addEventListener("click", function() {
+          window.open("ilgiAlanlarim.html", "_blank"); 
+        });
+
+        document.getElementById("acilanSayfa5").addEventListener("click", function() {
+          window.open("login.html", "_blank"); 
+        });
+
+        document.getElementById("acilanSayfa6").addEventListener("click", function() {
+          window.open("iletisim.html", "_blank"); 
+        });
+
+        document.getElementById("acilanSayfa7").addEventListener("click", function() {
+          window.open("miras.html", "_blank"); 
+        });
+        </script>
 </body>
+
 </html>
