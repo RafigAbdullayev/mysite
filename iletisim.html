@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim Formu</title>
     <style>
-        /* Stil kodları buraya */
-        /* Form alanları için genel stillendirme */
         input[type="text"], textarea {
             width: 100%;
             padding: 12px;
@@ -15,10 +13,7 @@
             box-sizing: border-box;
             margin-top: 6px;
             margin-bottom: 16px;
-            resize: vertical;
         }
-
-       
         input[type="submit"] {
             background-color: #4caf50;
             color: white;
@@ -28,9 +23,21 @@
             cursor: pointer;
         }
 
-        
         input[type="submit"]:hover {
             background-color: green;
+        }
+
+        input[type="reset"] {
+            background-color: red;
+            color: aliceblue;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="reset"]:hover {
+            background-color: darkred;
         }
 
         /*Form alanları düzenlenmesi*/
@@ -46,23 +53,60 @@
 <h2>İletişim Formu</h2>
 
 <div class="container">
-    <form action="/submit-your-form-handler" method="post">
+    <form action="veriAlma.php" method="post" onsubmit="return validateForm()">
         Adınız
-        <input type="text" placeholder="Adınızı giriniz">
+        <input type="text" id="isim" name="isim" required placeholder="Adınızı giriniz">
 
         Soyadınız
-        <input type="text" placeholder="Soyadınızı giriniz">
+        <input type="text" id="soyisim" name="soyisim" required placeholder="Soyadınızı giriniz">
 
         E-posta Adresiniz
-        <input type="text" placeholder="E-posta adresinizi giriniz">
+        <input type="text" id="email" name="email" required placeholder="E-posta adresinizi giriniz">
 
         Konu
-        <textarea placeholder="Mesajınızı buraya yazınız" style="height:200px"></textarea>
+        <textarea id="konu" name="konu" placeholder="Mesajınızı buraya yazınız" style="height:200px"></textarea>
 
         <input type="submit" value="Gönder">
+        <input type="reset" value="Sıfırla">
     </form>
 </div>
 
+<script>
+    function validateForm() {
+        var isim = document.getElementById('isim').value;
+        var soyisim = document.getElementById('soyisim').value;
+        var email = document.getElementById('email').value;
+        var konu = document.getElementById('konu').value;
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (isim === "") {
+            alert("Adınızı giriniz.");
+            return false;
+        }
+
+        if (soyisim === "") {
+            alert("Soyadınızı giriniz.");
+            return false;
+        }
+
+        if (email === "") {
+            alert("E-posta adresinizi giriniz.");
+            return false;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert("Lütfen geçerli bir email adresi giriniz.");
+            return false;
+        }
+
+        if (konu === "") {
+            alert("Mesajınızı yazınız.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </body>
 </html>
-
